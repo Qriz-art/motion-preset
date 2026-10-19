@@ -1,7 +1,7 @@
 export const SITE_NAME = "Motion Presets";
 export const SITE_TAGLINE = "Alight Motion Community";
 export const SITE_TITLE =
-  "Kumpulan Preset Alight Motion (AM) Gratis dari TikTok — Motion Presets";
+  "Preset Alight Motion (AM) Gratis dari Kreator TikTok — Motion Presets";
 export const SITE_DESCRIPTION =
   "Preset Alight Motion (AM) pilihan dari kreator TikTok — gratis, aesthetic, dan langsung siap pakai. Tonton previewnya lalu buka link XML preset dari halaman ini.";
 
