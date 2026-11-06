@@ -97,6 +97,19 @@ async function processRow({ row, cells }) {
  * melewati batas waktu eksekusi Vercel.
  */
 async function handler(request) {
+  // Bila CRON_SECRET diisi, endpoint hanya bisa dipanggil dengan header
+  // Authorization: Bearer <CRON_SECRET> (dipakai oleh cron eksternal).
+  const cronSecret = (process.env.CRON_SECRET ?? "").trim();
+  if (cronSecret) {
+    const authorization = request?.headers?.get("authorization") ?? "";
+    if (authorization !== `Bearer ${cronSecret}`) {
+      return NextResponse.json(
+        { ok: false, code: "unauthorized", error: "Unauthorized." },
+        { status: 401, headers: { "Cache-Control": "no-store" } }
+      );
+    }
+  }
+
   try {
     let rows;
     try {
