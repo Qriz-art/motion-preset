@@ -1,4 +1,5 @@
 import SearchBar from "@/components/SearchBar";
+import TikTokSearch from "@/components/TikTokSearch";
 
 /**
  * Hero section yang sengaja dibuat pendek supaya daftar preset tetap
@@ -20,8 +21,11 @@ export default function Hero({ query, onSearchChange }) {
           Temukan preset Alight Motion untuk membuat video edit kamu semakin menarik.
         </p>
 
-        <div className="mt-6 max-w-xl">
-          <SearchBar value={query} onChange={onSearchChange} />
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="max-w-xl flex-1">
+            <SearchBar value={query} onChange={onSearchChange} />
+          </div>
+          <TikTokSearch />
         </div>
       </div>
     </section>
